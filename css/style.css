@@ -1,0 +1,474 @@
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+button[type="submit"], input[type="submit"] {
+    cursor: pointer;
+}
+
+/* Cajarrito EMPIEZA */
+
+.cajausu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background-color: #00617e;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 3px;
+    border-radius: 10px 10px 1px 1px;
+}
+
+nav input {
+	background-color: #349c82;
+	width: 100px;
+	font-size: 16px;
+    color: white;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    outline: none;
+    border: 1px solid #00617e;
+    border-radius: 10px 1px 10px 1px;
+}
+
+nav{
+    background-color: white;
+    padding-top: 18px;
+    box-shadow: 0 7px 8px -3px #167980;
+    position: fixed;
+    width: 100%;
+    margin-top: -15px;
+    z-index: 99;
+}
+
+nav button {
+    all: unset;
+}
+
+.container{
+    text-align: center;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1200px;
+}
+
+.container h1{
+    font-size: 35px;
+}
+
+.container s{
+	text-decoration-color: #278d81;
+	text-decoration-thickness: 3px;
+}
+
+.header-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+    flex-wrap: wrap;    
+    margin: auto;
+    align-items: center;
+    position: relative;
+}
+
+.header-section div{
+    position: relative;
+}
+
+.header-section p{
+    position: absolute;
+    top: -24px;
+    right: -8px;
+    background-color: #00617e;
+    padding: 1px 6px;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    font-family: system-ui;
+    line-height: 18px;
+}
+
+.logo{
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+nav h1{
+    color: #004484;
+}
+
+.cart{
+    width: 39px;
+    height: 38px;
+}
+
+.cart:hover{
+    margin-bottom: 16px;
+    transition-duration: .5s;
+}
+
+/* Cajarrito TERMINA */
+
+/* Enlaces EMPIEZA */
+
+nav aside { 
+    width: 69%;
+    height: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    align-items: center;
+    padding-left: 10px;
+}
+
+nav a {
+    color: #00617e;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* Enlaces TERMINA */
+
+header {
+    position: relative;
+    text-align: center;    
+    background: linear-gradient(to right, #349c82, #00617e);
+    color: white;
+    padding-top: 250px;
+}
+
+header section {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+header img {
+    width: 200px;
+    padding-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header h2 {
+    text-align: center;
+    color: #00617e;
+    letter-spacing: 6px;
+    font-size: 3em;
+    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+}
+
+/* Deslizar EMPIEZA */
+
+.deslizar {
+    overflow: hidden;
+}
+
+.desliza {
+    position: absolute;
+    opacity: 0;
+    animation: fade 12s infinite;
+}
+
+.s1 {
+    animation-delay: 0s;
+}
+
+.s2 {
+    animation-delay: 4s;
+}
+
+.s3 {
+    animation-delay: 8s;
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  30%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Deslizar TERMINA */
+
+header section div {
+    height: 200px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ondas {
+    position:relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+main {
+    padding: 10px;
+}
+
+.principal2 h3 {
+    color: #00617e;
+    font-weight: normal;    
+    letter-spacing: 2px;
+}
+
+.principal2 {
+    background-color: #349c827a;
+    width: 99%;
+    margin-top: 20px; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+
+.principal2 article {
+    background: linear-gradient(to top, #00617e 0% 11%, #349c82 20% 80%, #00617e 89% 100%);
+    width: 390px;
+    height: 405px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.principal2 div {
+    background-color: white;
+    width: 40%;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 20px 1px 20px 1px;
+}
+
+.principal2 p {
+    text-align: left;
+    font-size: 12px;    
+}
+
+.principal2 img {
+    width: 40%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 7px 8px -1px #349c82;
+}
+
+.principal2 article img:hover ~ div {
+    display: none;
+}
+
+.principal2 article img:hover {
+    width: 99%;
+}
+
+.principal2 article h3 {
+    text-align: left;
+}
+
+/* .marca0, .marca1, .marca2, .marca7, .marca8, .marca10 */
+.principal2 article div {
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position-x: 120px;
+    background-position-y: 30px;
+}
+
+.marca0 {
+    background-image: url("../img/m/0.png");
+}
+
+.marca1 {
+    background-image: url("../img/m/1.png");
+}
+
+.marca2 {
+    background-image: url("../img/m/2.png");
+}
+
+.marca7 {
+    background-image: url("../img/m/7.png");
+}
+
+.marca8 {
+    background-image: url("../img/m/8.png");
+}
+
+.marca10 {
+    background-image: url("../img/m/10.png");
+}
+
+/* .marca0:hover, .marca1:hover, .marca2:hover, .marca7:hover, .marca8:hover, .marca10:hover  */
+.principal2 article div:hover {
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 20px;
+}
+
+.marca0:hover {
+    background-image: url("../img/m/0.png");
+}
+
+.marca1:hover {
+    background-image: url("../img/m/1.png");
+}
+
+.marca2:hover {
+    background-image: url("../img/m/2.png");
+}
+
+.marca7:hover {
+    background-image: url("../img/m/7.png");
+}
+
+.marca8:hover {
+    background-image: url("../img/m/8.png");
+}
+
+.marca10:hover {
+    background-image: url("../img/m/10.png");
+}
+
+.principal2 article div:hover h3 {
+    color: #00617e;
+    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-align: left;
+    margin: 0px;
+    margin-left: -190px;
+    margin-bottom: 130px;
+}
+
+.principal2 article div:hover p {
+    font-size: 14px;
+    margin: 0px;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+.carts {
+    margin-top: 5px;
+    margin-bottom: -18px;
+    margin-left: 30px;
+}
+
+.carts button {
+    color: #fff;
+    background-color: #00617e;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+    border: 3px solid #9eced0;
+    padding: 2px 7px 4px 7px;
+    border-radius: 0px 0px 9px 9px;
+}
+
+.carts button:hover{
+    background: #349c83;
+    transition-duration: .3s;
+}
+
+.ondeo {
+    background: white;
+    height: 12vh;
+}
+
+.pie {
+    background: linear-gradient(to right, #00617e, #349c82);
+    margin-top: -100px;
+    margin-bottom: -200px;
+    clip-path: url(#ola);
+    padding-top: 45px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+footer section img {
+    box-shadow: 0 7px 8px 3px #349c82;
+    border-radius: 30%;
+    margin-right: 3px;
+    margin-left: 3px;
+    width: 40px;
+}
+
+.logome {
+    width: 150px;
+}
+
+footer aside {
+    background-color: white;
+    text-align: center;
+    width: 350px;
+    padding: 10px;
+    margin: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border: 8px double #00617e;
+}
+
+footer aside h3 {
+    color: #00617e;   
+    font-weight: normal;    
+    letter-spacing: 3px;
+}
+
+footer input {
+    color: #00617e;
+    width: 99%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    outline: none;
+    border: 1px solid lightgrey;
+}
+
+footer input::placeholder {
+    color: #00617e;
+}
+
+footer input[type="text"], footer input[type="password"], footer input[type="email"], footer select {
+    background-color: #00617e6e;
+    padding-right: 0px;
+    width: 98%;
+}
+
+footer input[name="comentario"] {
+    padding-right: 0px;
+    height: 50px;
+}
+
+footer input[type="submit"] {
+    background-color: #00617e;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px 1px 10px 1px;
+}

@@ -1,0 +1,27 @@
+Tienda onlinea:
+
+- Gestión de usuario (Inicio y cierre de sesión).
+
+- Menu navegable:
+	- Inicio (sin sesión iniciada, ves un formulario de login. Con sesión iniciada, ves un mensaje personalizadao de bienvenida).
+	- Catálogo 
+	- Carrito (no se ve sin sesión iniciada)
+	- Deslogueo (no se ve sin sesión iniciada)
+
+- Una Persona no logueada solo podrá ver la página de inicio y el catálogo.
+
+- En el catálogo:
+	- Una persona logueada verá un botón "añadir al carrito" en cada artículo.
+	- Una persona no logueada verá los artículos SIN BOTÓN
+
+- Si una persona no logueada intenta acceder a la sección "carrito" o "cerrar sesión" directamente escribiendo la url, será reenviado a inicio.
+	
+- Si un usuario logeado pincha en añadir al carrito en cualquier producto, este se añade a la lista de la compra de su sesión que será visible en la sección carrito.
+
+-> ( Se recomienda usar el esquema de array de arrays [][][] propuesto en el ejemplo de la clínica )
+
+- Usar require_once con todo lo que sea propenso a ello.
+
+- Securizar el manejo de sesión.
+
+- Temporizar la sesión (caducidad).
