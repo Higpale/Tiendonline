@@ -9,20 +9,23 @@
         'use_only_cookies' => true      // Obliga a usar cookies, rechaza IDs pasados por URL (?PHPSESSID=...); No GET
     ]);
 
-    // Definir el tiempo máximo absoluto de sesión (ej. 1 hora = 3600 segundos, 15 minutos = 900 segundos)
-    $vida_maxima_sesion = 900;
+    // Definir el tiempo de inactividad de sesión (ej. 1 hora = 3600 segundos, 15 minutos = 900 segundos)
+    $inactividad_maxima = 900;
 
-    if (isset($_SESSION['hora_login']) && isset($_SESSION['usesion'])) { // Ambos por seguridad
-        // Calcular cuánto tiempo ha pasado desde el inicio de sesión
-        $tiempo_en_sesion = time() - $_SESSION['hora_login'];
-        if ($tiempo_en_sesion > $vida_maxima_sesion) {
+    if (isset($_SESSION['ultimo_acceso']) && isset($_SESSION['usesion'])) { // Ambos por seguridad
+        // Calcular cuánto tiempo ha pasado desde el último clic
+        $tiempo_transcurrido = time() - $_SESSION['ultimo_acceso'];
+        if ($tiempo_transcurrido > $inactividad_maxima) {
             // El tiempo absoluto ha expirado, procedemos a sesion_cerrar habitual
             $_SESSION = []; // Vacío los datos de las variables de sesion (=v)
             session_unset(); // Vacío los datos de las variables de sesion (=^)
             session_destroy(); // Vacío mi sesión local, es decir, la información registrada de una sesión en el servidor
-            setcookie(session_name(),"",time() - $vida_maxima_sesion,"/"); // Crea/expira la cookie trás el tiempo especificado
-            header("Location: #"); exit(); // Comandos siempre juntos
+            setcookie(session_name(),"",time() - (2*$inactividad_maxima),"/"); // Crea/expira la cookie trás el tiempo especificado
+            header("Location: #"); exit(); // Siempre juntos
         }
     } // Obviamos el else porque ya se pseudocontrola trás el require de este
+
+    // Si la sesión es válida o acaba de iniciar, actualizamos la marca de tiempo a ahora
+    $_SESSION['ultimo_acceso'] = time();
 
 ?>

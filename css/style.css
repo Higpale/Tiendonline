@@ -441,7 +441,7 @@ footer aside h3 {
     letter-spacing: 3px;
 }
 
-footer input {
+footer input, footer select {
     color: #00617e;
     width: 99%;
     margin-top: 10px;

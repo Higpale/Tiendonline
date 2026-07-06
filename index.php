@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">   
     
-    <?php require_once 'include/start.php'; // Activa la sesión ?>
+    <?php require_once 'include/start.php'; // Activa la sesión (configurada y con caducidad en start.php) ?>
 
     <head>
         <meta charset="UTF-8"/>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> --> <!-- Para moviles -->
 	    <link rel="icon" type="image/png" href="img/favicon.png"/>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <script src="js/script.js" type="text/javascript" defer></script>     
@@ -42,6 +43,8 @@
                     <a href="#redes">❊Redes</a>
                     <?php if(!isset($_SESSION['usesion'])) { ?>
                         <a href="#login">※Login</a>
+                    <?php } else if (isset($_SESSION['usesion']) && isset($_SESSION['usarea']) && $_SESSION['usarea']=="administrador") { ?>
+                        <a href="#login">※Login(Cambiar)</a>
                     <?php } ?>
                 </aside>
                 <div>
@@ -351,13 +354,35 @@
                     <h3>Login</h3>
 
                     <form action="php/sesion_abrir.php" method="POST">
-                        <input name="usuario" type="text" placeholder="|Usuario|" maxlength="20" value="" required/><br><br>
-                        <input name="contra" type="password" placeholder="|Contraseña|" maxlength="20" value="" required/><br><br> 
+                        <input name="usuario" type="text" placeholder="|Usuario|" maxlength="50" size="20" value="" required/><br><br>
+                        <input name="contra" type="password" placeholder="|Contraseña|" maxlength="50" size="20" value="" required/><br><br> 
                         <input name="entrarlg" type="submit" value="Entrar »"/>           
                     </form>
 
                 </aside>  
                 
+                <?php } else if (isset($_SESSION['usesion']) && isset($_SESSION['usarea']) && $_SESSION['usarea']=="administrador" && isset($_SESSION['acceden']) && isset($_SESSION['num']) && $_SESSION['num']>0) { ?>
+                
+                <aside id="login">
+                    
+                    <h3>Cambiar Login</h3>
+                    
+                    <form action="php/cambiar_login.php" method="POST">   
+						<input name="contra_adm" type="password" placeholder="|Contraseña Administrador|" maxlength="50" size="20" value="" required/><br><hr>                      
+                        <select name="usuario_chg" required>
+                             <option value="" disabled selected>|Usuario a Seleccionar|</option>
+                            <?php for ($i=0; $i<$_SESSION['num']; $i++) { ?>
+                             <option value="<?php echo $_SESSION['acceden'][$i]; ?>"><?php echo $_SESSION['acceden'][$i]; ?></option>
+                            <?php } ?>
+                        </select>
+                        <input name="usuario_neo" type="text" placeholder="|Usuario Nuevo Nombre|" maxlength="50" size="20" value="" required/><br><br>
+                        <input name="contra_usu" type="password" placeholder="|Contraseña Seleccionado|" maxlength="50" size="20" value="" required/><br> 
+                        <input name="contra_neo" type="password" placeholder="|Contraseña Nueva|" maxlength="50" size="20" value="" required/><br><hr> 
+                        <input name="entrarlg" type="submit" value="Cambiar »"/>
+                    </form>
+                    
+                </aside>  
+
                 <?php } ?>
                 
             </div>
